@@ -27,6 +27,10 @@ class World
   def will_be_born?
     live_neighbors == 3
   end
+
+  def find_neighbors
+
+  end
 end
 
 class Cell
@@ -34,6 +38,7 @@ class Cell
   def initialize(row, column)
     @alive = false
     @position = [row, column]
+    @neighbors = [[row-1, column-1],[row-1,column],[row-1, column+1],[row, column-1]]
   end
 
   def alive?
