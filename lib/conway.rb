@@ -1,5 +1,5 @@
 class World
-  attr_read :length :width :cells
+  attr_reader :length, :width, :cells
   def initialize(length, width)
     @length = length
     @width = width
@@ -12,7 +12,11 @@ class World
       length.times do |column|
         row << Cell.new
       end
+      @cells << row
     end
+  end
+
+  def neighbor_finder
   end
 end
 
