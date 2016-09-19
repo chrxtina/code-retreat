@@ -38,7 +38,7 @@ class Cell
   def initialize(row, column)
     @alive = false
     @position = [row, column]
-    @neighbors = [[row-1, column-1],[row-1,column],[row-1, column+1],[row, column-1]]
+    @neighbors = [[row-1, column-1],[row-1,column],[row-1, column+1],[row, column-1],[row, colum+1],[row+1, column-1], [row, column+1], [row+1, column+1]]
   end
 
   def alive?
