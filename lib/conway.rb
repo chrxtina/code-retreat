@@ -8,16 +8,17 @@ class World
 
   def populate_board
     width.times do |row|
-      row = []
+      row_array = []
       length.times do |column|
-        row << Cell.new
+        row_array << Cell.new(row, column)
       end
-      @cells << row
+      @cells << row_array
     end
+
   end
 
   def neighbor_finder
-  end  
+  end
 
   def will_die?
     live_neighbors > 3 || live_neighbors < 2
@@ -29,8 +30,10 @@ class World
 end
 
 class Cell
-  def initialize
+  attr_reader :position
+  def initialize(row, column)
     @alive = false
+    @position = [row, column]
   end
 
   def alive?
