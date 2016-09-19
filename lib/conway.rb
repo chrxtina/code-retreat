@@ -17,7 +17,7 @@ class World
   end
 
   def neighbor_finder
-  end
+  end  
 
   def will_die?
     live_neighbors > 3 || live_neighbors < 2
@@ -31,5 +31,13 @@ end
 class Cell
   def initialize
     @alive = false
+  end
+
+  def alive?
+    alive
+  end
+
+  def count_live_neighbors
+    neighbors.filter(&:alive?).reduce(:+)
   end
 end
