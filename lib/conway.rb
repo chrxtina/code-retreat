@@ -18,6 +18,14 @@ class World
 
   def neighbor_finder
   end
+
+  def will_die?
+    live_neighbors > 3 || live_neighbors < 2
+  end
+
+  def will_be_born?
+    live_neighbors == 3
+  end
 end
 
 class Cell
